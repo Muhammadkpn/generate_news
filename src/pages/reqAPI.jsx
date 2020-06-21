@@ -49,7 +49,7 @@ class RequestAPI extends React.Component{
         return (
             <FormGroup>
                 {/* <Label for="country">Country</Label> */}
-                <Input type="text" innerRef={(country)=> this.country = country} id="country" placeholder="Country"/>
+                <Input style={{width:'60%', margin:'auto'}} type="text" innerRef={(country)=> this.country = country} id="country" placeholder="Country"/>
             </FormGroup>
         )
     }
@@ -58,7 +58,7 @@ class RequestAPI extends React.Component{
         return (
             <FormGroup id="country">
                 {/* <Label for="country">Country</Label> */}
-                <Input type="select" innerRef={(category) => this.category = category}>
+                <Input style={{width:'60%', margin:'auto'}} type="select" innerRef={(category) => this.category = category}>
                     <option>Choose...</option>    
                     <option value="general">General</option>    
                     <option value="business">Business</option>    
@@ -74,7 +74,7 @@ class RequestAPI extends React.Component{
 
     buttonSubmit = () => {
         return (
-            <FormGroup style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <FormGroup style={{display:'flex', alignItems:'center', justifyContent:'center', margin:'auto'}}>
                 <Button className = "shadow rounded" color='dark' onClick={this.handleSubmit}>Submit</Button>
             </FormGroup>
         )
@@ -83,7 +83,7 @@ class RequestAPI extends React.Component{
     inputCard = () => {
         return (
             <div id="form-news">
-                <Card clasName="rounded shadow"style={{ width:'20%'}}>
+                <Card clasName="rounded shadow"style={{ width:'95%'}}>
                     <CardHeader><h1 style={{textAlign:'center'}}>Generate News</h1></CardHeader>
                     <CardBody>
                         {this.inputCountry()}
@@ -134,11 +134,11 @@ class RequestAPI extends React.Component{
 
     render(){
         return (
-            <div>
+            <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
                 {this.inputCard()}
-                    <div style={{display: 'flex', flexWrap: "wrap", justifyContent: 'space-evenly'}}>
-                        {this.renderCard()}
-                    </div>  
+                <div style={{display: 'flex', flexWrap: "wrap", justifyContent: 'space-evenly'}}>
+                    {this.renderCard()}
+                </div>  
             </div>
         )
     }
